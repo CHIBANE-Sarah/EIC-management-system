@@ -28,26 +28,6 @@ La conception repose sur:
 
 ---
 
-## Structure du dépôt
-
-EIC-management-system/
-
-├─ docs/
-
-│ ├─ MCD.png
-
-│ ├─ MLDR.png
-
-│ └─ MCD_MLDR.md
-
-├─ sql/
-
-│ └─ schema.sql
-
-└─ README.md
-
----
-
 ## Documentation
 
 La documentation complète des modèles de données est disponible dans:
