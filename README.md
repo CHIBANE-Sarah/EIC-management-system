@@ -30,13 +30,20 @@ La conception repose sur:
 
 ## Structure du dépôt
 
-EIC-management-systeme/
+EIC-management-system/
+
 ├─ docs/
+
 │ ├─ MCD.png
+
 │ ├─ MLDR.png
+
 │ └─ MCD_MLDR.md
+
 ├─ sql/
+
 │ └─ schema.sql
+
 └─ README.md
 
 ---
