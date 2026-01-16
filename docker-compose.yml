@@ -7,7 +7,7 @@ services:
       args:
         USERNAME: CAPITAL
         USERID: 197609
-    container_name: fw1-cc1
+    container_name: eic_m_s
     command: /bin/bash
     tty: true
     stdin_open: true

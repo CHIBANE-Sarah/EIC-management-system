@@ -37,7 +37,7 @@ La documentation complète des modèles de données est disponible dans:
 
 ## Base de données
 
-Le fichier 'sql/schema.sql' permet de créer la base de données correspondant au MLDR.
+Le fichier 'docs/schema.sql' permet de créer la base de données correspondant au MLDR.
 
 ---
 
