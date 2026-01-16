@@ -2,50 +2,63 @@
 
 ## Présentation
 
-**EIC Management System** est un projet académique de conception de système d’information
-réalisé dans le cadre des études en informatique/MIAGE.
-Il vise à modéliser et structurer la gestion interne du **Economic Ingenious Club (EIC)**.
+**EIC Management System** est un projet académique de conception et de développement
+d'un système d’information réalisé dans le cadre des études en informatique/MIAGE.
+L'objectif du projet est de modéliser, structurer et implémenter la gestion interne du
+**Economic Ingenious Club (EIC)** à travers une approche méthodique mêlant:
+conception SI, architecture logicielle et développement web.
 
 ---
 
-## Fonctionnalités couvertes
+## Objectifs du projet
 
-- Gestion des membres et de leurs rôles
-- Organisation des cellules du club
-- Gestion des événements
-- Communication interne (messages)
-- Gestion des contacts externes
+- Comprendre et appliquer une démarche complète de conception SI
+- Mettre en pratique la modélisation des données (MCD/MLDR)
+- Structurer une application web autour de domaines métier clairs
+- Préparer une implémentation backend avec Django
+- Utiliser Docker pour standardiser l’environnement de développement
+
+---
+
+## Fonctionnalités ciblées
+
+- Gestion des membres du club et de leurs rôles
+- Organisation des cellules (Marketing, RH, Relations extérieures)
+- Gestion des événements et du calendrier
+- Communication interne (messages, rappels, avertissements)
+- Gestion des contacts externes (partenaires, sponsors, formateurs)
+
+---
+
+## Choix d’architecture : apps métier Django
+
+Le projet est structuré autour de **plusieurs applications Django métier** plutôt que
+de simples pages HTML indépendantes.
+Chaque application correspond à un **domaine fonctionnel précis** :
+
+- 'membres': profils, rôles, statistiques, avertissements
+- 'cellules': organisation interne du club
+- 'evenements': événements et calendrier
+- 'contacts': base de données des contacts externes
+- 'messagerie': communication interne
+- 'authentification': gestion des connexions et des permissions
+
+Ce choix permet :
+
+- une meilleure lisibilité du code
+- une séparation claire des responsabilités
+- une évolution plus simple du projet
 
 ---
 
 ## Conception du système d’information
 
-La conception repose sur:
+La conception du projet repose sur:
 
-- Un **MCD (Modèle Conceptuel de Données)**
-- Un **MLDR (Modèle Logique de Données Relationnel)**
-- Un **script SQL** pour la création de la base de données
+- un **MCD (Modèle Conceptuel de Données)**
+- un **MLDR (Modèle Logique de Données Relationnel)**
+- un **script SQL** de création de la base de données
 
----
-
-## Documentation
-
-La documentation complète des modèles de données est disponible dans:
-'docs/MCD_MLDR.md'
+Les documents de conception sont disponibles dans le dossier: 'docs/MCD_MLDR.md'
 
 ---
-
-## Base de données
-
-Le fichier 'docs/schema.sql' permet de créer la base de données correspondant au MLDR.
-
----
-
-## Évolution du projet
-
-Ce dépôt constitue la **base de conception** du projet.
-Il pourra être étendu ultérieurement avec:
-
-- Une implémentation backend (Django)
-- Une interface frontend
-- Une base de données fonctionnelle
