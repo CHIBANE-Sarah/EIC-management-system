@@ -36,18 +36,30 @@ Le projet est structuré autour de **plusieurs applications Django métier** plu
 de simples pages HTML indépendantes.
 Chaque application correspond à un **domaine fonctionnel précis** :
 
-- 'membres': profils, rôles, statistiques, avertissements
-- 'cellules': organisation interne du club
-- 'evenements': événements et calendrier
-- 'contacts': base de données des contacts externes
-- 'messagerie': communication interne
-- 'authentification': gestion des connexions et des permissions
+- membres: profils, rôles, statistiques, avertissements
+- cellules: organisation interne du club
+- evenements: événements et calendrier
+- contacts: base de données des contacts externes
+- messagerie: communication interne
+- authentification: gestion des connexions et des permissions
 
 Ce choix permet :
 
 - une meilleure lisibilité du code
 - une séparation claire des responsabilités
 - une évolution plus simple du projet
+  Créer une seule application globale aurait rendu le projet plus difficile à maintenir
+  et moins fidèle à la modélisation du système d’information.
+
+---
+
+## Base de données
+
+La base de données viens du MLDR
+Les relations ont été implémentées dans django via:
+
+- 'foreignKey' pour les cardinalités (1,N)
+- 'ManyToManyField' pour els cardinalités (N,N)
 
 ---
 
