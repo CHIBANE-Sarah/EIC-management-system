@@ -1,16 +1,17 @@
 from django.db import models
-from membres.models import Membre
 
 
 class Evenement(models.Model):
-    titre = models.CharField(max_length=50)
+    id_evenement = models.AutoField(primary_key=True)
+    titre = models.CharField(max_length=200)
     description = models.TextField()
-    date_debut = models.DateTimeField()
-    date_fin = models.DateTimeField()
-    lieu = models.CharField(max_length=50)
-    status = models.CharField(max_length=50)
+    date_debut = models.DateField()
+    date_fin = models.DateField()
+    lieu = models.CharField(max_length=200)
+    statut = models.CharField(max_length=50)
+
     participants = models.ManyToManyField(
-        Membre, related_name='evenements', blank=True)
+        'membres.Membre', related_name='evenements_participes')
 
     def __str__(self):
         return self.titre
