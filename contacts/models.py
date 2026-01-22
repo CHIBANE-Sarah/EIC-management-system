@@ -1,19 +1,17 @@
 from django.db import models
 
-
 class Contact(models.Model):
-    id_contact = models.AutoField(primary_key=True)
-    nom = models.CharField(max_length=100)
-    poste = models.CharField(max_length=100)
-    email = models.EmailField()
-    telephone = models.CharField(max_length=50)
-    linkedin = models.CharField(max_length=200, blank=True)
-    type_contact = models.CharField(max_length=50)
-    remarque = models.CharField(max_length=100, blank=True)
+    TYPE_CHOICES = [
+        ('ENTREPRISE', 'Entreprise'),
+        ('PARTENAIRE', 'Partenaire'),
+        ('INTERVENANT', 'Intervenant'),
+    ]
 
-    id_membre = models.ForeignKey('membres.Membre', on_delete=models.CASCADE)
-    id_cellule = models.ForeignKey(
-        'cellules.Cellule', on_delete=models.CASCADE)
+    nom = models.CharField(max_length=100)
+    type_contact = models.CharField(max_length=20, choices=TYPE_CHOICES)
+    email = models.EmailField()
+    telephone = models.CharField(max_length=20)
+    derniere_interaction = models.DateField(auto_now=True)
 
     def __str__(self):
-        return self.nom
+        return f"{self.nom} ({self.type_contact})"

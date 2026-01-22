@@ -1,0 +1,124 @@
+{%extends 'base.html' %}
+{% block title %}Tableau de Bord{% endblock %}
+{% block content %}
+<div class="container-fluid">
+  <div class="row g-4 mb-4">
+    <div class="col-md-3">
+      <div class="card border-0 shadow-sm p-3 text-center">
+        <div class="text-muted small fw-bold">MEMBRES ACTIFS</div>
+        <div class="d-flex align-items-center justify-content-between mt-2">
+          <h3 class="mb-0">42</h3>
+          <div class="bg-primary text-white p-2 rounded">
+            <i class="fas fa-users"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="card border-0 shadow-sm p-3 text-center">
+        <div class="text-muted small fw-bold">ÉVÉNEMENTS</div>
+        <div class="d-flex align-items-center justify-content-between mt-2">
+          <h3 class="mb-0">12</h3>
+          <div class="bg-success text-white p-2 rounded">
+            <i class="fas fa-calendar"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="card border-0 shadow-sm p-3 text-center">
+        <div class="text-muted small fw-bold">AVERTISSEMENTS</div>
+        <div class="d-flex align-items-center justify-content-between mt-2">
+          <h3 class="mb-0">3</h3>
+          <div class="bg-warning text-white p-2 rounded">
+            <i class="fas fa-exclamation-triangle"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="card border-0 shadow-sm p-3 text-center">
+        <div class="text-muted small fw-bold">MESSAGES</div>
+        <div class="d-flex align-items-center justify-content-between mt-2">
+          <h3 class="mb-0">8</h3>
+          <div class="bg-info text-white p-2 rounded">
+            <i class="fas fa-envelope"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-8">
+      <div class="card border-0 shadow-sm p-4 mb-4">
+        <h5 class="card-title mb-4">Aperçu du Calendrier - Janvier 2026</h5>
+        <div class="table-responsive">
+          <table class="table table-bordered text-center align-middle">
+            <thead class="table-light">
+              <tr>
+                <th>Lun</th>
+                <th>Mar</th>
+                <th>Mer</th>
+                <th>Jeu</th>
+                <th>Ven</th>
+                <th>Sam</th>
+                <th>Dim</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="py-3">1</td>
+                <td class="py-3">2</td>
+                <td class="py-3">3</td>
+                <td class="py-3">4</td>
+                <td class="py-3">5</td>
+                <td class="py-3">6</td>
+                <td class="py-3 text-primary fw-bold">7</td>
+              </tr>
+              <tr>
+                <td class="py-3">8</td>
+                <td class="py-3">9</td>
+                <td class="py-3">10</td>
+                <td class="bg-primary text-white py-3">
+                  11 <br /><small>Réunion</small>
+                </td>
+                <td class="py-3">12</td>
+                <td class="py-3">13</td>
+                <td class="py-3">14</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card border-0 shadow-sm p-4">
+        <h5 class="card-title mb-3 text-primary">
+          <i class="fas fa-bell me-2"></i>Notifications
+        </h5>
+        <div class="list-group list-group-flush">
+          <div class="list-group-item px-0 py-3 border-0 border-bottom">
+            <div class="d-flex justify-content-between">
+              <small class="text-muted">Il y a 2h</small>
+              <span class="badge bg-light text-primary">Info</span>
+            </div>
+            <p class="mb-0 fw-bold">Nouvel événement créé : Workshop Django</p>
+          </div>
+          <div class="list-group-item px-0 py-3 border-0">
+            <div class="d-flex justify-content-between">
+              <small class="text-muted">Hier</small>
+              <span class="badge bg-light text-danger">Alerte</span>
+            </div>
+            <p class="mb-0 text-danger fw-bold">
+              Avertissement envoyé à Jean Dupont
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

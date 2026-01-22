@@ -5,14 +5,17 @@ from django.contrib import messages
 
 def login_view(request):
     if request.method == 'POST':
-        username = request.POST.get('username')
-        password = request.POST.get('password')
-        user = authenticate(username=u, password=p)
+        nom_utilisateur = request.POST.get('username')
+        mot_de_passe = request.POST.get('password')
+
+        user = authenticate(username=nom_utilisateur, password=mot_de_passe)
+
         if user is not None:
             login(request, user)
             return redirect('dashboard')
         else:
             messages.error(request, "Identifiants invalides")
+
     return render(request, 'authentification/login.html')
 
 
