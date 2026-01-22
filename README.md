@@ -30,6 +30,18 @@ conception SI, architecture logicielle et développement web.
 
 ---
 
+## État d'd'avancement
+Le système est actuellement fonctionnel sur les modules suivants :
+
+- **Sécurité & Authentification :** Système complet de login/logout avec redirection sécurisée.
+- **Tableau de Bord (Dashboard) :** Interface centrale affichant les statistiques clés et la navigation intuitive.
+- **Gestion des Membres :** Modèle de données étendu (Profils) lié aux utilisateurs Django, permettant une gestion par Cellule.
+- **Base de Contacts :** Répertoire dynamique des partenaires, entreprises et intervenants avec filtrage par type.
+- **Calendrier des Événements :** Intégration de **FullCalendar JS** pour une visualisation interactive des réunions, formations et événements du club, synchronisée avec la base de données.
+- **Messagerie Interne :** Système de communication permettant l'envoi et la réception de messages entre les membres du club.
+
+---
+
 ## Choix d’architecture : apps métier Django
 
 Le projet est structuré autour de **plusieurs applications Django métier** plutôt que
@@ -74,3 +86,9 @@ La conception du projet repose sur:
 Les documents de conception sont disponibles dans le dossier: 'docs/MCD_MLDR.md'
 
 ---
+
+## Installation et Lancement
+
+1. Cloner le dépôt : 'git clone https://github.com/CHIBANE-Sarah/EIC-management-system.git'
+2. Appliquer les migrations : 'python manage.py migrate'
+3. Lancer le serveur : 'python manage.py runserver'
