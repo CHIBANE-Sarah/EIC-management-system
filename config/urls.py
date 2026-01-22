@@ -6,5 +6,6 @@ urlpatterns = [
     path('auth/', include('authentification.urls')),
     path('', include('membres.urls')),
     path('contacts/', include('contacts.urls')),
-    path('mon-equipe/', include('membres.urls')),
+    path('calendrier/', include('evenements.urls')),
+    path('messages/', include('messagerie.urls')),
 ]
