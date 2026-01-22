@@ -1,4 +1,5 @@
 from django.db import models
+from membres.models import Profil
 
 
 class Evenement(models.Model):
@@ -10,8 +11,7 @@ class Evenement(models.Model):
     lieu = models.CharField(max_length=200)
     statut = models.CharField(max_length=50)
 
-    participants = models.ManyToManyField(
-        'membres.Membre', related_name='evenements_participes')
+    participants = models.ManyToManyField(Profil, related_name='evenements_participe')
 
     def __str__(self):
         return self.titre

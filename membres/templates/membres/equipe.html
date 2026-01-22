@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block title %}Mon Équipe{% endblock %}
+
+{% block content %}
+<div class="container-fluid">
+    <div class="mb-4">
+        <h4>Gestion de la cellule : <span class="text-primary">{{ ma_cellule.nom }}</span></h4>
+        <p class="text-muted">Gérez les membres de votre équipe et suivez leurs adhésions.</p>
+    </div>
+
+    <div class="card border-0 shadow-sm p-4">
+        <h5 class="mb-4">Membres de l'Équipe</h5>
+        <div class="table-responsive">
+            <table class="table table-hover align-middle">
+                <thead class="table-light">
+                    <tr>
+                        <th>Nom Complet</th>
+                        <th>Poste</th>
+                        <th>Email</th>
+                        <th>Téléphone</th>
+                        <th>Adhésion</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for membre in equipe %}
+                    <tr>
+                        <td>
+                            <div class="d-flex align-items-center">
+                                <div class="bg-secondary text-white rounded-circle me-2 d-flex justify-content-center align-items-center" style="width: 35px; height: 35px;">
+                                    {{ membre.user.first_name|slice:":1" }}{{ membre.user.last_name|slice:":1" }}
+                                </div>
+                                <div>
+                                    <div class="fw-bold">{{ membre.user.get_full_name|default:membre.user.username }}</div>
+                                </div>
+                            </div>
+                        </td>
+                        <td><span class="badge bg-light text-dark">{{ membre.get_poste_display }}</span></td>
+                        <td>{{ membre.user.email }}</td>
+                        <td>{{ membre.telephone }}</td>
+                        <td>{{ membre.date_adhesion|date:"d/m/Y" }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock %}

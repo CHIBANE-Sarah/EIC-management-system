@@ -1,5 +1,5 @@
 from django.db import models
-
+from membres.models import Profil
 
 class Message(models.Model):
     id_message = models.AutoField(primary_key=True)
@@ -8,10 +8,8 @@ class Message(models.Model):
     date_envoi = models.DateTimeField(auto_now_add=True)
     lu = models.BooleanField(default=False)
 
-    id_membre = models.ForeignKey(
-        'membres.Membre', on_delete=models.CASCADE, related_name='messages_envoyes')
-    id_membre_1 = models.ForeignKey(
-        'membres.Membre', on_delete=models.CASCADE, related_name='messages_recus')
+    id_membre = models.ForeignKey(Profil, on_delete=models.CASCADE, related_name='messages_envoyes')
+    id_membre_1 = models.ForeignKey(Profil, on_delete=models.CASCADE, related_name='messages_recus')
 
     def __str__(self):
         return f"Message {self.id_message}"
